@@ -1,6 +1,13 @@
 # WSO2 API Manager VM Deployment
 
-This repository contains bash scripts and configurations required for setting up WSO2 API Manager all-in-one deployment pattern on on a local machine.
+This repository contains bash scripts and configurations required for setting up WSO2 API Manager 2.1.0 with all-in-one deployment pattern on a local machine.
+
+## Deployment Components
+
+- API Manager MySQL database container
+- API Manager Anlaytics database container
+- API Manager instance
+- API Manager Analytics instance
 
 ## Quick Start
 
