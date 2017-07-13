@@ -5,7 +5,7 @@ This repository contains bash scripts and configurations required for setting up
 ## Deployment Components
 
 - API Manager MySQL database container
-- API Manager Anlaytics database container
+- API Manager Anlaytics MySQL database container
 - API Manager instance
 - API Manager Analytics instance
 
