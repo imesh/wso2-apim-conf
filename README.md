@@ -1,12 +1,12 @@
-# WSO2 API Manager VM Deployment
+# WSO2 API Manager Deployment Automation
 
-This repository contains bash scripts and configurations required for setting up WSO2 API Manager 2.1.0 with all-in-one deployment pattern on a local machine.
+This repository contains configurations required for setting up WSO2 API Manager 2.1.0 and WSO2 API Manager Analytics 2.1.0 according to all-in-one deployment pattern on a local machine.
 
 ## Deployment Components
 
 - API Manager MySQL database container
 - API Manager Anlaytics MySQL database container
-- API Manager instance
+- API Manager instances
 - API Manager Analytics instance
 
 ## Quick Start
@@ -14,7 +14,7 @@ This repository contains bash scripts and configurations required for setting up
 - Close this repository:
 
   ````
-  git clone https://github.com/imesh/wso2-apim-vm-deployment.git
+  git clone https://github.com/imesh/wso2-apim-deployment-automation.git
   ````
 
 - Copy WSO2 API Manager 2.1.0 and WSO2 API Manager Analytics 2.1.0 distributions to the ```dist/``` folder.
