@@ -105,4 +105,8 @@ if (( apim_instance_count == 2 )); then
     echo "WSO2 API-M node 2 started!"
 fi
 
+echo "Checking for errors..."
+cat wso2am-2.1.0-1/repository/logs/wso2carbon.log | grep ERROR
+cat wso2am-2.1.0-2/repository/logs/wso2carbon.log | grep ERROR
+cat wso2am-analytics-2.1.0/repository/logs/wso2carbon.log | grep ERROR
 echo "Setup completed!"

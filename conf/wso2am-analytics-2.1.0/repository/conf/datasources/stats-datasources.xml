@@ -24,6 +24,7 @@
 					<validationInterval>30000</validationInterval>
 					<defaultAutoCommit>false</defaultAutoCommit>
 				</configuration>
-			</datasource>
-		</datasources>
-	</datasources-configuration>
+			</definition>
+		</datasource>
+	</datasources>
+</datasources-configuration>
