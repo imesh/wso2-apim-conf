@@ -17,17 +17,17 @@ This repository contains configurations required for setting up WSO2 API Manager
   git clone https://github.com/imesh/wso2-apim-deployment-automation.git
   ````
 
-- Copy WSO2 API Manager 2.1.0 and WSO2 API Manager Analytics 2.1.0 distributions to the ```dist/``` folder.
+- Download WSO2 API Manager 2.1.0 and WSO2 API Manager Analytics 2.1.0 distributions via [WSO2 Update Manager](http://wso2.com/api-management/#download) and copy them to the ```dist/``` folder.
 
 - Install JDK 8 and update $PATH variable. 
 
-- Execute ```setup.sh``` script:
+- Execute ```setup.sh``` script to setup the deployment:
 
   ````
   ./setup.sh
   ````
 
-- Execute ```clean.sh``` script to remove the deployment:
+- Once the work is completed, execute ```clean.sh``` script to remove the deployment:
 
   ````
   ./clean.sh
