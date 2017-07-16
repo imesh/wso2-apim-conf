@@ -6,7 +6,8 @@ mysql_port1=3306
 mysql_port2=3307
 connector_jar="mysql-connector-java-5.1.36-bin.jar"
 apim_instance_count=2
-synapse_folder_path="repository/deployment/server/synapse-configs/default"
+synapse_folder_path="repository/deployment/server/synapse-configs"
+script_path=`pwd`
 
 function check_container_exists() {
     name=$1
@@ -49,10 +50,11 @@ else
     echo "Creating API-M node2..."
     mv "wso2am-2.1.0" "wso2am-2.1.0-2"
 
-    echo "Creating symlink for API synchronization..."
-    rm -rf wso2am-2.1.0-2/${synapse_folder_path}/*
-    ln -s wso2am-2.1.0-1/${synapse_folder_path}/* wso2am-2.1.0-2/${synapse_folder_path}
-    ls -l wso2am-2.1.0-2/${synapse_folder_path}
+    echo "Creating symlinks for API synchronization..."
+    rm -rf wso2am-2.1.0-1/${synapse_folder_path}
+    rm -rf wso2am-2.1.0-2/${synapse_folder_path}
+    ln -sfnv ${script_path}/volumes/apim-gateway/synapse-configs ${script_path}/wso2am-2.1.0-1/${synapse_folder_path}
+    ln -sfnv ${script_path}/volumes/apim-gateway/synapse-configs ${script_path}/wso2am-2.1.0-2/${synapse_folder_path}
 fi
 
 echo "Extracting API-M analytics distribution..."
