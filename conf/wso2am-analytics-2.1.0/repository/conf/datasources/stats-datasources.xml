@@ -1,0 +1,29 @@
+<datasources-configuration 
+	xmlns:svns="http://org.wso2.securevault/configuration">
+	<providers>
+		<provider>org.wso2.carbon.ndatasource.rdbms.RDBMSDataSourceReader</provider>
+	</providers>
+	<datasources>
+		<datasource>
+			<name>WSO2AM_STATS_DB</name>
+			<description>The datasource used for setting statistics to API Manager</description>
+			<jndiConfig>
+				<name>jdbc/WSO2AM_STATS_DB</name>
+			</jndiConfig>
+			<definition type="RDBMS">
+				<configuration>
+					<driverClassName>com.mysql.jdbc.Driver</driverClassName>
+					<url>jdbc:mysql://localhost:3307/wso2apim_analytics_db</url>
+					<username>root</username>
+					<password>mysql</password>
+					<maxActive>50</maxActive>
+					<maxWait>60000</maxWait>
+					<minIdle>5</minIdle>
+					<testOnBorrow>true</testOnBorrow>
+					<validationQuery>SELECT 1</validationQuery>
+					<validationInterval>30000</validationInterval>
+					<defaultAutoCommit>false</defaultAutoCommit>
+				</configuration>
+			</datasource>
+		</datasources>
+	</datasources-configuration>

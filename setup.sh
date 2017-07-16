@@ -41,14 +41,17 @@ echo "Extracting API-M distribution..."
 unzip dist/wso2am-2.1.0.zip
 
 if (( apim_instance_count == 1 )); then
+    echo "Creating API-M node 1..."
     mv "wso2am-2.1.0" "wso2am-2.1.0-1"
 else
+    echo "Creating API-M node1..."
     cp -r "wso2am-2.1.0" "wso2am-2.1.0-1"
+    echo "Creating API-M node2..."
     mv "wso2am-2.1.0" "wso2am-2.1.0-2"
 
     echo "Creating symlink for API synchronization..."
-    rm -rf wso2am-2.1.0-2/${synapse_folder_path}
-    ln -s wso2am-2.1.0-1/${synapse_folder_path} wso2am-2.1.0-2/${synapse_folder_path}
+    rm -rf wso2am-2.1.0-2/${synapse_folder_path}/*
+    ln -s wso2am-2.1.0-1/${synapse_folder_path}/* wso2am-2.1.0-2/${synapse_folder_path}
     ls -l wso2am-2.1.0-2/${synapse_folder_path}
 fi
 
@@ -71,6 +74,9 @@ if (( apim_instance_count == 2 )); then
     cp -r conf/wso2am-2.1.0-1/ wso2am-2.1.0-2/
     cp -r conf/wso2am-2.1.0-2/ wso2am-2.1.0-2/
 fi
+
+echo "Copying API-M analytics configurations..."
+cp -r conf/wso2am-analytics-2.1.0/ wso2am-analytics-2.1.0/
 
 echo "Waiting API-M database to start on ${host}:${mysql_port1}"
 wait_for_port ${mysql_port1}
