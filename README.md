@@ -2,12 +2,10 @@
 
 This repository contains configurations required for setting up WSO2 API Manager 2.1.0 and WSO2 API Manager Analytics 2.1.0 according to all-in-one deployment pattern on a local machine.
 
-## Deployment Components
+## Deployment Architecture
 
-- API Manager MySQL database container
-- API Manager Anlaytics MySQL database container
-- API Manager instances
-- API Manager Analytics instance
+The following diagram illustrates the deployment architecture:
+![](images/deployment-architecture.png)
 
 ## Quick Start
 
