@@ -1,4 +1,4 @@
-# WSO2 API Manager Deployment Automation
+# WSO2 API Manager Deployment Guide
 
 This repository contains configurations required for setting up WSO2 API Manager 2.1.0 and WSO2 API Manager Analytics 2.1.0 according to all-in-one deployment pattern on a local machine.
 
@@ -12,7 +12,7 @@ The following diagram illustrates the deployment architecture:
 - Close this repository:
 
   ````
-  git clone https://github.com/imesh/wso2-apim-deployment-automation.git
+  git clone https://github.com/imesh/wso2-apim-deployment-guide.git
   ````
 
 - Download WSO2 API Manager 2.1.0 and WSO2 API Manager Analytics 2.1.0 distributions via [WSO2 Update Manager](http://wso2.com/api-management/#download) and copy them to the ```dist/``` folder.
