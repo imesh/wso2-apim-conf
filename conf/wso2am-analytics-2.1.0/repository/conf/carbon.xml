@@ -44,7 +44,7 @@
        This is will become part of the End Point Reference of the
        services deployed on this server instance.
     -->
-    <!--HostName>www.wso2.org</HostName-->
+    <HostName>analytics-node1</HostName>
 
     <!--
     Host name to be used for the Carbon management console
