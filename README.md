@@ -31,9 +31,9 @@ The following diagram illustrates the deployment architecture:
 
 - Clone this repository:
 
-  ````
+  ```
   git clone https://github.com/imesh/wso2-apim-deployment-guide.git
-  ````
+  ```
 
 - Download WSO2 API Manager 2.1.0 and WSO2 API Manager Analytics 2.1.0 distributions via [WSO2 Update Manager](http://wso2.com/api-management/#download) and copy them to the ```dist/``` folder.
 
@@ -41,27 +41,27 @@ The following diagram illustrates the deployment architecture:
 
 - Update MySQL connector JAR filename in setup.sh script:
 
-  ````
+  ```
   connector_jar="mysql-connector-java-5.1.36-bin.jar"
-  ````
+  ```
 
 - Install JDK 8, set JAVA_HOME and update the $PATH variable:
 
-  ````bash
-  export JAVA_HOME=`/path/to/jdk/home/directory
+  ```bash
+  export JAVA_HOME=/path/to/jdk/home/directory
   export PATH=$JAVA_HOME/bin:$PATH
-  ````
+  ```
 
 - Execute ```setup.sh``` script to setup the deployment:
 
-  ````bash
+  ```bash
   ./setup.sh
-  ````
+  ```
 
 - Once the work is completed, execute ```clean.sh``` script to remove the deployment. 
   Note that this operation will remove both MySQL database containers, WSO2 API Manager and
   WSO2 API Manager Analytics installations:
 
-  ````bash
+  ```bash
   ./clean.sh
-  ````
+  ```
