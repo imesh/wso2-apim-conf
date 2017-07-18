@@ -69,12 +69,13 @@ cp dist/${connector_jar} wso2am-analytics-2.1.0/repository/components/lib/
 
 
 echo "Copying API-M node 1 configurations..."
-cp -r conf/wso2am-2.1.0-1/ wso2am-2.1.0-1/
+cp -r conf/wso2am-2.1.0/ wso2am-2.1.0-1/
 
 if (( apim_instance_count == 2 )); then
-    echo "Copying API-M node 2 configurations..."
-    cp -r conf/wso2am-2.1.0-1/ wso2am-2.1.0-2/
-    cp -r conf/wso2am-2.1.0-2/ wso2am-2.1.0-2/
+    echo "Copying API-M configurations node 2..."
+    cp -r conf/wso2am-2.1.0/ wso2am-2.1.0-2/
+    echo "Setting API-M node 2 port offset to 2..."
+    sed -i.bak "s@<Offset>0</Offset>@<Offset>2</Offset>@g" "wso2am-2.1.0-2/repository/conf/carbon.xml"
 fi
 
 echo "Copying API-M analytics configurations..."
