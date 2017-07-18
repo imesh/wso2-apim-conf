@@ -52,6 +52,15 @@ The following diagram illustrates the deployment architecture:
   export PATH=$JAVA_HOME/bin:$PATH
   ```
 
+- Set following hostnames in /etc/hosts file:
+  
+  ```
+  127.0.0.1 apim-node1
+  127.0.0.1 apim-node2
+  127.0.0.1 apim-analytics-node
+  127.0.0.1 apim-lb
+  ```
+
 - Execute ```setup.sh``` script to setup the deployment:
 
   ```bash
