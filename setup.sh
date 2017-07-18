@@ -106,7 +106,14 @@ if (( apim_instance_count == 2 )); then
 fi
 
 echo "Checking for errors..."
-cat wso2am-2.1.0-1/repository/logs/wso2carbon.log | grep ERROR
-cat wso2am-2.1.0-2/repository/logs/wso2carbon.log | grep ERROR
-cat wso2am-analytics-2.1.0/repository/logs/wso2carbon.log | grep ERROR
+
+if ! grep "ERROR" "wso2am-2.1.0-1/repository/logs/wso2carbon.log"; then
+    echo "API-M node 1 has no errors" >&2
+fi
+if ! grep "ERROR" "wso2am-2.1.0-2/repository/logs/wso2carbon.log"; then
+    echo "API-M node 1 has no errors" >&2
+fi
+if ! grep "ERROR" "wso2am-analytics-2.1.0/repository/logs/wso2carbon.log"; then
+    echo "API-M analytics node has no errors" >&2
+fi
 echo "Setup completed!"
