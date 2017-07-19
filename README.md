@@ -10,13 +10,10 @@ The following diagram illustrates the deployment architecture:
 ## Repository Content
 
 - #### /conf/default
-  The default configurations folder contains all configuration files that ship with the WSO2 API Manager and WSO2 API Manager Analytics distributions.
+  The default configurations folder contains all configuration files that are shipped with the WSO2 API Manager 2.1.0 and WSO2 API Manager Analytics 2.1.0 distributions.
 
-- #### /conf/wso2am-2.1.0-1
-  This folder contains configurations common for both WSO2 API Manager node 1 and node 2.
-
-- #### /conf/wso2am-2.1.0-2
-  This folder contains configurations specific to WSO2 API Manager node 2.
+- #### /conf/wso2am-2.1.0
+  This folder contains configurations required for WSO2 API Manager node 1 and node 2.
 
 - #### /conf/wso2am-analytics-2.1.0
   This folder contains configurations required for WSO2 API Manager Analytics node.
@@ -25,7 +22,23 @@ The following diagram illustrates the deployment architecture:
   This folder has been reserved for copying the WSO2 API Manager distribution, API Manager Analytics distribution and MySQL connector for Java.
 
 - #### /volumes/apim-gateway/synapse-configs/
-  This is the default synapse configuration folder shipped with the API Manager 2.1.0 distribution. It has been copied to a separate folder to be able to mount to both API Manager nodes via symlinks.
+  This is the default synapse configuration folder shipped with the API Manager 2.1.0 distribution. It has been copied to a separate folder to be able to mount to both API Manager nodes via symbolic links.
+
+## Hostnames
+
+Following hostnames have been used in this deployment:
+
+- wso2-apim-node1
+  This is the hostname or the IP address of the WSO2 API Manager node 1.
+
+- wso2-apim-node2
+  This is the hostname or the IP address of the WSO2 API Manager node 2.
+
+- wso2-apim-analytics
+  This is the hostname of the WSO2 API Manager Analytics node.
+
+- wso2-apim-lb
+  This is the hostname of the load balancer used for load balancing HTTP traffic of API Manager nodes.
 
 ## Quick Start
 
