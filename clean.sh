@@ -36,8 +36,13 @@ if [ -d "wso2am-2.1.0-2/" ]; then
 fi
 
 echo "Removing WSO2 API-M distributions..."
-rm -rf "wso2am-2.1.0-1"
 
+if [ -d "wso2am-2.1.0" ]; then
+    rm -rf "wso2am-2.1.0"
+fi
+if [ -d "wso2am-2.1.0-1/" ]; then
+    rm -rf "wso2am-2.1.0-1"
+fi
 if [ -d "wso2am-2.1.0-2/" ]; then
     rm -rf "wso2am-2.1.0-2"
 fi

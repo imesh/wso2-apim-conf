@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+mysql_version=5.6.36
 host="localhost"
 mysql_port1=3306
 mysql_port2=3307
@@ -27,14 +28,14 @@ check_container_exists "wso2-apim-db"
 docker run --name "wso2-apim-db" -p ${mysql_port1}:3306 -e MYSQL_ROOT_PASSWORD=mysql \
                         -e MYSQL_USER=mysql \
                         -e MYSQL_PASSWORD=mysql \
-                        -e MYSQL_DATABASE=wso2apim_db -d mysql:5.5
+                        -e MYSQL_DATABASE=wso2apim_db -d mysql:${mysql_version}
 
 echo "Starting WSO2 API-M Analytics database container..."
 check_container_exists "wso2-apim-analytics-db"
 docker run --name "wso2-apim-analytics-db" -p ${mysql_port2}:3306 -e MYSQL_ROOT_PASSWORD=mysql \
                         -e MYSQL_USER=mysql \
                         -e MYSQL_PASSWORD=mysql \
-                        -e MYSQL_DATABASE=wso2apim_analytics_db -d mysql:5.5
+                        -e MYSQL_DATABASE=wso2apim_analytics_db -d mysql:${mysql_version}
 
 
 
@@ -94,27 +95,40 @@ sh "wso2am-analytics-2.1.0/bin/wso2server.sh" -Dsetup start
 wait_for_port 9444
 echo "WSO2 API-M analytics node started!"
 
+echo "Checking for errors..."
+if ! grep "ERROR" "wso2am-analytics-2.1.0/repository/logs/wso2carbon.log"; then
+    echo "API-M analytics node has no errors" >&2
+else 
+    echo "API-M analytics node has errors"
+    exit 1
+fi
+
 echo "Starting WSO2 API-M node 1..."
 sh wso2am-2.1.0-1/bin/wso2server.sh -Dsetup start
 wait_for_port 9443
+
+echo "Checking for errors..."
+if ! grep "ERROR" "wso2am-2.1.0-1/repository/logs/wso2carbon.log"; then
+    echo "API-M node 1 has no errors" >&2
+else 
+    echo "API-M node 1 node has errors"
+    exit 1
+fi
+
 echo "WSO2 API-M node 1 started!"
 
 if (( apim_instance_count == 2 )); then
     echo "Starting WSO2 API-M node 2..."
     sh wso2am-2.1.0-2/bin/wso2server.sh -Dsetup start
     wait_for_port 9445
+
+    echo "Checking for errors..."
+    if ! grep "ERROR" "wso2am-2.1.0-2/repository/logs/wso2carbon.log"; then
+        echo "API-M node 2 has no errors" >&2
+    else 
+        echo "API-M node 2 node has errors"
+        exit 1
+    fi
     echo "WSO2 API-M node 2 started!"
 fi
-
-echo "Checking for errors..."
-
-if ! grep "ERROR" "wso2am-2.1.0-1/repository/logs/wso2carbon.log"; then
-    echo "API-M node 1 has no errors" >&2
-fi
-if ! grep "ERROR" "wso2am-2.1.0-2/repository/logs/wso2carbon.log"; then
-    echo "API-M node 1 has no errors" >&2
-fi
-if ! grep "ERROR" "wso2am-analytics-2.1.0/repository/logs/wso2carbon.log"; then
-    echo "API-M analytics node has no errors" >&2
-fi
-echo "Setup completed!"
+echo "Setup completed successfully!"
