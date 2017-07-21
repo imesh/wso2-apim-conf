@@ -34,7 +34,7 @@ Following hostnames have been used in this deployment:
 - wso2-apim-node2
   This is the hostname or the IP address of the WSO2 API Manager node 2.
 
-- wso2-apim-analytics
+- wso2-apim-analytics-node
   This is the hostname of the WSO2 API Manager Analytics node.
 
 - wso2-apim-lb
@@ -68,10 +68,10 @@ Following hostnames have been used in this deployment:
 - Set following hostnames in /etc/hosts file:
   
   ```
-  127.0.0.1 apim-node1
-  127.0.0.1 apim-node2
-  127.0.0.1 apim-analytics-node
-  127.0.0.1 apim-lb
+  127.0.0.1 wso2-apim-node1
+  127.0.0.1 wso2-apim-node2
+  127.0.0.1 wso2-apim-analytics-node
+  127.0.0.1 wso2-apim-lb
   ```
 
 - Execute ```setup.sh``` script to setup the deployment:
