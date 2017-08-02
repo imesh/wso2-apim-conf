@@ -42,10 +42,13 @@ Following hostnames have been used in this deployment:
 
 ## Quick Start
 
-- Clone this repository:
+The following steps can be used to try this out on a local machine before using it in a real environment:
+
+- Clone this repository and switch to the all-on-one-pattern folder:
 
   ```
-  git clone https://github.com/imesh/wso2-apim-deployment-guide.git
+  git clone https://github.com/imesh/wso2-apim-conf.git
+  cd wso2-apim-conf/all-in-one-pattern/
   ```
 
 - Download WSO2 API Manager 2.1.0 and WSO2 API Manager Analytics 2.1.0 distributions via [WSO2 Update Manager](http://wso2.com/api-management/#download) and copy them to the ```dist/``` folder.
@@ -80,9 +83,7 @@ Following hostnames have been used in this deployment:
   ./setup.sh
   ```
 
-- Once the work is completed, execute ```clean.sh``` script to remove the deployment. 
-  Note that this operation will remove both MySQL database containers, WSO2 API Manager and
-  WSO2 API Manager Analytics installations:
+- Once the work is completed, execute ```clean.sh``` script to remove the deployment. Note that this operation will remove both MySQL database containers, WSO2 API Manager and WSO2 API Manager Analytics installations:
 
   ```bash
   ./clean.sh
