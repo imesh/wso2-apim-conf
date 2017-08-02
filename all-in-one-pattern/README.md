@@ -1,6 +1,6 @@
-# WSO2 API Manager Deployment Guide
+# WSO2 API Manager Configurations for All-In-One Pattern
 
-This repository contains configurations required for setting up WSO2 API Manager 2.1.0 and WSO2 API Manager Analytics 2.1.0 according to all-in-one deployment pattern on a local machine. The purpose of creating this repository is to provide a clear view of the deployment architecture, configurations required and the dependencies that exist between components.
+This repository contains configurations required for setting up WSO2 API Manager 2.1.0 and WSO2 API Manager Analytics 2.1.0 according to all-in-one deployment pattern. The purpose of creating this repository is to provide a clear view of the deployment architecture, configurations required and the dependencies that exist between components.
 
 ## Deployment Architecture
 
