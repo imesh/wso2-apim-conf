@@ -6,7 +6,7 @@
     <datasources>
         <datasource>
             <name>WSO2_CARBON_DB</name>
-            <description>The datasource used for registry and user manager</description>
+            <description>The datasource used for local registry</description>
             <jndiConfig>
                 <name>jdbc/WSO2CarbonDB</name>
             </jndiConfig>
@@ -26,7 +26,7 @@
         </datasource>
         <datasource>
             <name>WSO2AM_DB</name>
-            <description>The datasource used for API Manager database</description>
+            <description>The datasource used for API manager features</description>
             <jndiConfig>
                 <name>jdbc/WSO2AM_DB</name>
             </jndiConfig>
@@ -48,7 +48,7 @@
         </datasource>
         <datasource>
             <name>WSO2GOV_DB</name>
-            <description>The datasource used for registry and user manager</description>
+            <description>The datasource used for governance and config registry</description>
             <jndiConfig>
                 <name>jdbc/WSO2GovDB</name>
             </jndiConfig>
@@ -70,7 +70,7 @@
         </datasource>
         <datasource>
             <name>WSO2UM_DB</name>
-            <description>The datasource used for API Manager database</description>
+            <description>The datasource used for user manager</description>
             <jndiConfig>
                 <name>jdbc/WSO2UM_DB</name>
             </jndiConfig>
@@ -92,7 +92,7 @@
         </datasource>
         <datasource>
             <name>WSO2AM_STATS_DB</name>
-            <description>The datasource used for getting statistics to API Manager</description>
+            <description>The datasource used for reading API statistics</description>
             <jndiConfig>
                 <name>jdbc/WSO2AM_STATS_DB</name>
             </jndiConfig>
@@ -114,7 +114,7 @@
         </datasource>
         <datasource>
             <name>WSO2_MB_STORE_DB</name>
-            <description>The datasource used for message broker database</description>
+            <description>The datasource used for message broker</description>
             <jndiConfig>
                 <name>WSO2MBStoreDB</name>
             </jndiConfig>
